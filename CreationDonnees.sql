@@ -110,8 +110,8 @@ CREATE TABLE Mort_vivant (
 CREATE TABLE Elementaire (
 	id_elementaire INTEGER PRIMARY KEY AUTO_INCREMENT,
     famille INTEGER,
-    element ENUM('Feu', 'Eau', 'Terre', 'Air'),
-    taille ENUM('Petit', 'Moyen', 'Gros'),
+    element ENUM('air', 'feu', 'terre', 'eau'),
+    taille ENUM('rikiki', 'moyen', 'grand', 'colossal'),
     /* Contraintes */
     FOREIGN KEY (famille) REFERENCES Famille_monstre(id_famille)
 );
