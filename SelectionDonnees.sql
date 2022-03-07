@@ -15,6 +15,12 @@ NATURAL JOIN Famille_monstre
 INNER JOIN Humanoide ON id_famille = famille;
 
 # Question B
-SELECT id_salle, longueur*largeur AS aire FROM Salle
+SELECT fonction, longueur*largeur AS aire FROM Salle
 	ORDER by longueur*largeur DESC
 	LIMIT 1;
+    
+# Question C
+SELECT arme FROM Monstre
+NATURAL JOIN Famille_monstre
+INNER JOIN Humanoide ON id_famille = famille
+	WHERE code_employe = 'A320';
