@@ -136,6 +136,7 @@ CREATE TABLE Responsabilite (
 );
 
 CREATE TABLE Affectation_salle (
+	id_affectation INTEGER PRIMARY KEY AUTO_INCREMENT,
 	monstre INTEGER,
     responsabilite INTEGER,
     salle INTEGER,
