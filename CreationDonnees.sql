@@ -78,15 +78,15 @@ CREATE TABLE Ligne_coffre (
     quantite INTEGER,
     /* Contraintes */
     PRIMARY KEY (coffre, objet),
-    FOREIGN KEY (coffre) REFERENCES Coffre_tresor(id_coffre_tresor)
+    FOREIGN KEY (coffre) REFERENCES Coffre_tresor(id_coffre_tresor),
+    FOREIGN KEY (objet) REFERENCES Objet(id_objet)
 );
 
 CREATE TABLE Famille_monstre (
 	id_famille INTEGER PRIMARY KEY AUTO_INCREMENT,
     nom_famille VARCHAR(255),
     point_vie_maximal INTEGER,
-    degat_base INTEGER,
-    famille INTEGER
+    degat_base INTEGER
 );
 
 CREATE TABLE Humanoide (
@@ -143,7 +143,6 @@ CREATE TABLE Affectation_salle (
     debut_affectation DATETIME,
     fin_affectation DATETIME,
     /* Contraintes */
-    PRIMARY KEY (monstre, salle),
     FOREIGN KEY (monstre) REFERENCES Monstre(id_monstre),
     FOREIGN KEY (responsabilite) REFERENCES Responsabilite(id_responsabilite),
     FOREIGN KEY (salle) REFERENCES Salle(id_salle)
