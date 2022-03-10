@@ -1,3 +1,14 @@
+/*
+ * Code d'insertion des données de la bd pour Donjon Inc.
+ *
+ * Fichier : InsertionDonnees.sql
+ * Auteur : Olivier Belrose et Antoine Ouellette
+ * Langage : SQL
+ * Date : mars 2022
+ */
+ 
+USE RessourcesMonstrueuses;
+
 INSERT INTO Famille_monstre (id_famille, nom_famille, point_vie_maximal, degat_base) VALUES
 	(1, 'Zombie', 12, 3),
 	(2, 'Zombie de Troll', 36, 8),
