@@ -59,6 +59,15 @@ NATURAL JOIN Expedition_aventurier
 NATURAL JOIN Expedition
 	GROUP BY Expedition.id_expedition;
 
+# Question H
+SELECT sum(masse*quantite) FROM Ligne_coffre
+INNER JOIN Coffre_tresor ON coffre = id_coffre_tresor
+INNER JOIN Salle ON salle = id_salle
+INNER JOIN Objet ON objet = id_objet
+	WHERE fonction = 'caserne des goblins'
+GROUP BY coffre;
+
+
 
 
 
