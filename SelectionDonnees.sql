@@ -59,6 +59,38 @@ NATURAL JOIN Expedition_aventurier
 NATURAL JOIN Expedition
 	GROUP BY Expedition.id_expedition;
 
+# Question H
+SELECT sum(masse*quantite) FROM Ligne_coffre
+INNER JOIN Coffre_tresor ON coffre = id_coffre_tresor
+INNER JOIN Salle ON salle = id_salle
+INNER JOIN Objet ON objet = id_objet
+	WHERE fonction = 'caserne des goblins'
+GROUP BY coffre;
+
+# Question I
+SELECT Salle_suivante.fonction FROM Salle
+INNER JOIN Salle AS Salle_suivante ON Salle.salle_suivante = Salle_suivante.id_salle
+INNER JOIN Visite_salle ON Salle.id_salle = salle
+INNER JOIN Expedition ON expedition = id_expedition
+	WHERE nom_equipe = 'girafes triomphantes' AND Salle.fonction = 'entree secrete - ouest';
+
+# Question J
+SELECT sum(valeur*quantite) FROM Ligne_coffre
+INNER JOIN Objet ON objet = id_objet
+INNER JOIN Coffre_tresor ON coffre = id_coffre_tresor
+INNER JOIN Salle ON Coffre_tresor.salle = id_salle
+INNER JOIN Visite_salle ON Salle.id_salle = Visite_salle.salle
+INNER JOIN Expedition ON expedition = id_expedition
+	WHERE fonction = 'salle de repos' AND nom_equipe = 'girafes triomphantes'
+GROUP BY coffre;
+
+
+
+
+
+
+
+
 
 
 
